@@ -2,7 +2,7 @@
 const roofingIndustryAdapter = {
   schemaVersion: 1,
   key: 'roofing',
-  version: '1.0.0',
+  version: '1.1.0',
   label: 'Roofing',
   description: 'Steep-slope roofing estimating, takeoff, material-order, and field-operation enhancements.',
   status: 'internal',
@@ -284,22 +284,25 @@ const roofingIndustryAdapter = {
       }
     ]
   },
-  recommendations: {
-    jobTypes: ['roof replacement', 'overlay', 'repair', 'storm damage', 'new construction', 'ventilation', 'skylight'],
+  extensions: {
+    jobStatuses: ['inspected', 'measured', 'material-ordered', 'tear-off', 'dry-in', 'installed', 'punch-list'],
     customFields: {
       jobs: [
-        { id: 'roofing.job.roof_area_squares', key: 'industry.roofing.roof_area_squares', label: 'Roof area (squares)', type: 'number' },
-        { id: 'roofing.job.predominant_pitch', key: 'industry.roofing.predominant_pitch', label: 'Predominant pitch', type: 'text' },
-        { id: 'roofing.job.existing_layers', key: 'industry.roofing.existing_layers', label: 'Existing layers', type: 'number' },
-        { id: 'roofing.job.tear_off_required', key: 'industry.roofing.tear_off_required', label: 'Tear-off required', type: 'text' },
-        { id: 'roofing.job.stories', key: 'industry.roofing.stories', label: 'Stories', type: 'number' },
-        { id: 'roofing.job.deck_type', key: 'industry.roofing.deck_type', label: 'Deck type', type: 'text' },
-        { id: 'roofing.job.shingle_product', key: 'industry.roofing.shingle_product', label: 'Shingle product', type: 'text' },
-        { id: 'roofing.job.underlayment_type', key: 'industry.roofing.underlayment_type', label: 'Underlayment type', type: 'text' },
-        { id: 'roofing.job.ventilation_type', key: 'industry.roofing.ventilation_type', label: 'Ventilation type', type: 'text' },
-        { id: 'roofing.job.access_limitations', key: 'industry.roofing.access_limitations', label: 'Access limitations', type: 'text' }
+        { key: 'industry_roofing_roof_area_squares', label: 'Roof area (squares)', type: 'number' },
+        { key: 'industry_roofing_predominant_pitch', label: 'Predominant pitch', type: 'text' },
+        { key: 'industry_roofing_existing_layers', label: 'Existing layers', type: 'number' },
+        { key: 'industry_roofing_tear_off_required', label: 'Tear-off required', type: 'text' },
+        { key: 'industry_roofing_stories', label: 'Stories', type: 'number' },
+        { key: 'industry_roofing_deck_type', label: 'Deck type', type: 'text' },
+        { key: 'industry_roofing_shingle_product', label: 'Shingle product', type: 'text' },
+        { key: 'industry_roofing_underlayment_type', label: 'Underlayment type', type: 'text' },
+        { key: 'industry_roofing_ventilation_type', label: 'Ventilation type', type: 'text' },
+        { key: 'industry_roofing_access_limitations', label: 'Access limitations', type: 'text' }
       ]
     }
+  },
+  recommendations: {
+    jobTypes: ['roof replacement', 'overlay', 'repair', 'storm damage', 'new construction', 'ventilation', 'skylight']
   },
   calculators: [
     {
