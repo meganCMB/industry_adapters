@@ -35,7 +35,8 @@ const roofingIndustryAdapter = {
       accessories: ['starter', 'starter strip', 'ridge cap', 'hip and ridge', 'drip edge', 'valley metal', 'pipe boot', 'step flashing', 'counter flashing'],
       ventilation: ['ridge vent', 'box vent', 'turtle vent', 'off-ridge vent', 'soffit vent', 'power vent'],
       decking: ['deck', 'decking', 'sheathing', 'osb', 'plywood', 'rotten deck', 'soft spots'],
-      linear_runs: ['ridge', 'hip', 'valley', 'eave', 'rake', 'lf', 'linear feet']
+      linear_runs: ['ridge', 'hip', 'valley', 'eave', 'rake', 'lf', 'linear feet'], 
+      estimate:['bid', 'proposal'],
     }
   },
   measurements: {

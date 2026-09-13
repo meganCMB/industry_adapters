@@ -26,6 +26,7 @@ const concreteIndustryAdapter = {
       concrete_volume: ['yards', 'yardage', 'cy', 'cubic yards', 'ready-mix volume'],
       placement: ['pour', 'placement', 'placing concrete'],
       reinforcement: ['rebar', 'wire mesh', 'fiber', 'dowels'],
+      crew:['laborer'],
       joints: ['saw cuts', 'control joints', 'expansion joints'],
       base_preparation: ['subgrade', 'base', 'stone base', 'compaction']
     }
