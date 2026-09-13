@@ -19,3 +19,7 @@ export function normalizedLength(input, label) {
   if (!Number.isFinite(value) || value <= 0) throw measurementError(`${label} must be greater than zero.`);
   return { value, unit, meters: value * map[unit] };
 }
+// Length pair, added for the gutter adapter. The real implementations belong in
+// the shared measurement service alongside the volume and area pairs.
+export function lengthOutputUnit(sys) { return sys === 'metric' ? 'm' : 'ft'; }
+export function metersTo(m, unit) { return unit === 'm' ? m : m / FT; }

@@ -1,7 +1,7 @@
 const concreteIndustryAdapter = {
   schemaVersion: 1,
   key: 'concrete',
-  version: '1.1.0',
+  version: '1.2.0',
   label: 'Concrete',
   description: 'Concrete estimating, placement, material-order, and field-operation enhancements.',
   status: 'internal',
@@ -26,7 +26,6 @@ const concreteIndustryAdapter = {
       concrete_volume: ['yards', 'yardage', 'cy', 'cubic yards', 'ready-mix volume'],
       placement: ['pour', 'placement', 'placing concrete'],
       reinforcement: ['rebar', 'wire mesh', 'fiber', 'dowels'],
-      crew:['laborer'],
       joints: ['saw cuts', 'control joints', 'expansion joints'],
       base_preparation: ['subgrade', 'base', 'stone base', 'compaction']
     }
@@ -162,18 +161,21 @@ const concreteIndustryAdapter = {
       }
     ]
   },
-  recommendations: {
-    jobTypes: ['driveway', 'patio', 'sidewalk', 'slab', 'foundation', 'footing', 'repair'],
+  extensions: {
+    jobStatuses: ['site-prep', 'pre-pour', 'ready-to-pour', 'placed', 'curing'],
     customFields: {
       jobs: [
-        { id: 'concrete.job.placement_type', key: 'industry.concrete.placement_type', label: 'Placement type', type: 'text' },
-        { id: 'concrete.job.design_strength', key: 'industry.concrete.design_strength', label: 'Design strength', type: 'text' },
-        { id: 'concrete.job.thickness', key: 'industry.concrete.thickness', label: 'Thickness', type: 'text' },
-        { id: 'concrete.job.estimated_volume', key: 'industry.concrete.estimated_volume', label: 'Estimated concrete volume', type: 'number' },
-        { id: 'concrete.job.finish', key: 'industry.concrete.finish', label: 'Finish', type: 'text' },
-        { id: 'concrete.job.reinforcement', key: 'industry.concrete.reinforcement', label: 'Reinforcement', type: 'text' }
+        { key: 'industry_concrete_placement_type', label: 'Placement type', type: 'text' },
+        { key: 'industry_concrete_design_strength', label: 'Design strength', type: 'text' },
+        { key: 'industry_concrete_thickness', label: 'Thickness', type: 'text' },
+        { key: 'industry_concrete_estimated_volume', label: 'Estimated concrete volume', type: 'number' },
+        { key: 'industry_concrete_finish', label:'Finish', type:'select', options:['Broom', 'Stamped','Smooth Trowel', 'Exposed Aggregate']},
+        { key: 'industry_concrete_reinforcement', label: 'Reinforcement', type: 'text' }
       ]
     }
+  },
+  recommendations: {
+    jobTypes: ['driveway', 'patio', 'sidewalk', 'slab', 'foundation', 'footing', 'repair']
   },
   calculators: [
     {
